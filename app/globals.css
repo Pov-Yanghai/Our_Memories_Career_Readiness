@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Warm & Love-Inspired Color Palette */
+  --background: #fdf8f5;
+  --foreground: #3d2c26;
+  --card: #ffffff;
+  --card-foreground: #3d2c26;
+  --popover: #ffffff;
+  --popover-foreground: #3d2c26;
+  
+  /* Primary: Warm peach/coral - love & warmth */
+  --primary: #e8956e;
+  --primary-foreground: #ffffff;
+  
+  /* Secondary: Soft pastel purple - appreciation & respect */
+  --secondary: #d4a5d4;
+  --secondary-foreground: #ffffff;
+  
+  /* Accent: Soft pink - tenderness & care */
+  --accent: #f4b5c4;
+  --accent-foreground: #3d2c26;
+  
+  --muted: #f0ddd5;
+  --muted-foreground: #7a6359;
+  --destructive: #e74c3c;
+  --destructive-foreground: #ffffff;
+  --border: #e8ddd0;
+  --input: #faf5f2;
+  --ring: #e8956e;
+  --chart-1: #e8956e;
+  --chart-2: #d4a5d4;
+  --chart-3: #f4b5c4;
+  --chart-4: #f0ddd5;
+  --chart-5: #dab8a8;
+  --radius: 0.75rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #3d2c26;
+  --sidebar-primary: #e8956e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4b5c4;
+  --sidebar-accent-foreground: #3d2c26;
+  --sidebar-border: #e8ddd0;
+  --sidebar-ring: #e8956e;
+}
+
+.dark {
+  --background: #2c1f1a;
+  --foreground: #fdf8f5;
+  --card: #3d2c26;
+  --card-foreground: #fdf8f5;
+  --popover: #3d2c26;
+  --popover-foreground: #fdf8f5;
+  --primary: #f09d82;
+  --primary-foreground: #2c1f1a;
+  --secondary: #dbb3dd;
+  --secondary-foreground: #2c1f1a;
+  --muted: #4d3a32;
+  --muted-foreground: #b8a59e;
+  --accent: #f4c0ce;
+  --accent-foreground: #2c1f1a;
+  --destructive: #ff8080;
+  --destructive-foreground: #2c1f1a;
+  --border: #4d3a32;
+  --input: #3d2c26;
+  --ring: #f09d82;
+  --chart-1: #f09d82;
+  --chart-2: #dbb3dd;
+  --chart-3: #f4c0ce;
+  --chart-4: #4d3a32;
+  --chart-5: #dab8a8;
+  --sidebar: #3d2c26;
+  --sidebar-foreground: #fdf8f5;
+  --sidebar-primary: #f09d82;
+  --sidebar-primary-foreground: #2c1f1a;
+  --sidebar-accent: #f4c0ce;
+  --sidebar-accent-foreground: #2c1f1a;
+  --sidebar-border: #4d3a32;
+  --sidebar-ring: #f09d82;
+}
+
+@theme inline {
+  --font-sans: var(--font-roboto, 'Roboto'), 'system-ui', 'sans-serif';
+  --font-mono: var(--font-inter, 'Inter'), 'monospace';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for gift section */
+@keyframes floatHeart {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) scale(0.5);
+  }
+}
+
+@keyframes openFlap {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(120deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: floatHeart 3s ease-in forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
